@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Tracker</title>
+  <link rel="ca3.css" href="ca3.css">
+</head>
+<body>
+  <center>
+  <header>
+    <h1 style="background-color: rgb(188, 238, 163);"> PERSONAL FINANCE TRACKER</h1>
+  </header>
+
+  <main>
+    <section id="summary">
+      <style>
+        div{
+            background-color: rgb(226, 233, 233);
+            border-top:5px solid rgb(5, 1, 15) ;
+            width:1000px; height:100px;
+            padding:15px;
+            margin:15px;
+    
+        }
+    </style>
+      <div class="card">
+        <h3>BALANCE</h3>
+        <p id="balance">$0.00</p>
+      </div>
+      <br>
+
+      <div class="card">
+        <h3>TOTAL INCOME</h3>
+        <p id="income">$0.00</p>
+      </div>
+      <br>
+
+      <div class="card">
+        <h3>TOTAL EXPENSE</h3>
+        <p id="expense">$0.00</p>
+      </div>
+      <br>
+    </section>
+
+    <section id="form-section">
+      <form id="transaction-form">
+        <div class="transaction">
+        <h3>ADD TRANSACTION</h3>
+        <label for="type">Type:</label>
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+        
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="salary">Salary</option>
+          <option value="food">Food</option>
+          <option value="rent">Rent</option>
+          <option value="transport">Transport</option>
+          <option value="entertainment">Entertainment</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <button type="submit">Add Transaction</button>
+      </div>
+      </form>
+    </section>
+
+    <section id="transaction-history">
+      <h3>Transaction History</h3>
+      <br>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list">
+          <!-- Transactions will be appended here -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="chart-section">
+      <h3>Expense Breakdown</h3>
+      <canvas id="expense-chart"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="ca3.js"></script>
+</center>
+</body>
+</html>
